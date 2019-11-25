@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Student Details</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <style>
+  #Result::first-letter{
+    font-style: italic;
+  
+  }
+  
+  </style>
+  <body>
+    <div class="alert alert-primary mt-3 ml-3" role="alert">
+      Student Details
+    </div>
+    <div class="container-fluid">
+      <div class="row mt-5">
+        <div class="col-md-5">
+          <div>
+            <div class="form-group">
+              <label for="txtName">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="txtName"
+                placeholder="Your Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="slctCourse">Course</label>
+              <select class="form-control" id="slctCourse">
+                <option>Angular</option>
+                <option>JavaScript</option>
+                <option>Node</option>
+                <option>React</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="rngGrade">Grade <span class="badge badge-info">45</span></label>
+              <input
+                type="range"
+                class="form-control-range"
+                id="rngGrade"
+                oninput="updateGrade()"
+              />
+            </div>
+            <div class="form-group">
+              <label for="txtImage">Image</label>
+              <input
+                type="text"
+                class="form-control"
+                id="txtImage"
+                placeholder="Image"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" onclick="saveDetails()">
+              Save
+            </button>
+          </div>
+        </div>
+        
+        <div class="des col-md-2">
+         <!-- <img src="" id="logoID" width="35px" height="35px"/>-->
+          <div class="row">
+              <div class="col-md-4">
+                  <h1 id="head"></h1>
+                  
+              </div>
+              <div class="col-4 " ></div>
+              <div class="col-md-2">
+                  <img src="" id="logoID" alt="logo" width="45px" height="35px" />
+              </div>
+          </div>
+          <!--  <h1 id="head">  </h1> -->
+          <p id="Result"></p><hr>
+        </div>
+        <div class="col-md-5 student-preview ">
+          <div class="card" style="width: 18rem;">
+            <img
+              src="assets/logostudent.jpg"
+              class="card-img-top"
+              alt="Image"
+            />
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                style="width: 25%;"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >25%
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" id="cardH"></h5>
+              <p class="card-text">
+              </p>
+             
+            </div>         
+          </div>
+        </div>
+        
+      </div>
+     
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      
+
+
+        //Save references to DOM objects
+        var txtName = document.querySelector('#txtName');
+        var slctCourse = document.querySelector('#slctCourse');
+        var rngGrade = document.querySelector('#rngGrade');
+        var badge = document.querySelector('span.badge');
+
+
+
+        var txtImage = document.querySelector('#txtImage');
+        var detailsImg = document.querySelector('.card img');
+        var cardProgress = document.querySelector('.card .progress');
+        var CardTitle=document.querySelector('#cardH');
+        var CardText=document.querySelector('.card-text');
+
+        var result=document.querySelector('#Result');
+        var head=document.querySelector('#head');
+        var ImageHead=document.querySelector('#logoID');
+    
+        //Event handler
+        //Will be executed when save button is clicked
+
+        function saveDetails() {
+            var name = txtName.value,
+                course = slctCourse.value,
+                grade = rngGrade.value,
+                image = txtImage.value;
+            updateStudentDetails(name, course, grade, image);
+
+
+            
+        switch(course) {
+        case 'Angular':
+          head.innerText="Angular";
+          result.innerText="AngularJS is a JavaScript-based open-source front-end web framework mainly maintained by Google and by a community of individuals and corporations to address many of the challenges encountered in developing single-page applications.";
+          ImageHead.src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png";
+          break;
+        case 'JavaScript':
+        head.innerText="JavaScript";
+        result.innerText="JavaScript,often abbreviated as JS, is a high-level, interpreted scripting language that conforms to the ECMAScript specification. JavaScript has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.";
+        ImageHead.src="https://pbs.twimg.com/profile_images/590149318071353345/4EqHKAGD_400x400.png";
+          break;
+          case 'Node':
+            head.innerText="Node";
+            result.innerText="Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser.";
+            ImageHead.src="data:image/jpeg;base64,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";
+            break;
+            case 'React':
+              head.innerText="React";
+              result.innerText="React (also known as React.js or ReactJS) is a JavaScript library[3] for building user interfaces. It is maintained by Facebook and a community of individual developers and companies.";
+              ImageHead.src="https://upload.wikimedia.org/wikipedia/he/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png";
+        default:
+      }
+  }
+
+        function updateStudentDetails(name, course, grade, image){
+          detailsImg.src = image;
+          var htmlTitle=`<h5 class="card-title" id="cardH">${name}</h5>`;
+          var cardtextHtml=` <p class="card-text">${course}</p>`;
+          var progressHtml = `<div
+                class="progress-bar"
+                role="progressbar"
+                style="width: ${grade}%;"
+                aria-valuenow="${grade}"
+                aria-valuemin="0"
+                aria-valuemax="100">
+                ${grade}%</div>`;
+
+          cardProgress.innerHTML = progressHtml;
+          CardTitle.innerHTML=htmlTitle;
+          CardText.innerHTML=cardtextHtml;
+        }
+
+        //Event handler
+        //Will be executed when we slide the range button
+        function updateGrade() {
+            badge.innerText = rngGrade.value;
+        }
+    </script>
+  </body>
+</html>

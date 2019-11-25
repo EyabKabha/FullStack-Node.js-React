@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+        <form class="alert alert-success">
+            
+                <div class="alert alert-success" role="alert">
+
+                        <h1 style="text-align: center;">Student Details</h1>
+                        <h6 style="text-align: center;">Hello Student! Please fill in your Details</h6>
+                </div>
+
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                        <label for="inputUsername">Username</label>
+                  <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">
+                            <img src="assets/user.png" style="width: 20; height: 20px;">
+                        </span>
+                      <input type="text" name="inputUsername" class="form-control" id="inputText" placeholder="Enter Username">
+                    </div>
+                </div>
+
+
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">Email</label>
+                      <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">
+                                  <img src="assets/email.png" style="width: 20; height: 20px;">
+                            </span>
+                            <input type="text" name="inputEmail" class="form-control" id="inputEmail" placeholder="Enter Email">
+                        </div>   
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="inputAddress">Address</label>
+                  <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">
+                            <img src="assets/house.png" style="width: 20; height: 20px;">
+                       </span>
+                       <input type="textarea" name="inputText" class="form-control" id="inputAddress" placeholder="Street,Number,City,Zip">
+                  </div>
+                </div>
+            
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputCity">Course</label>
+                    <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">
+                                <img src="assets/college-graduation.png" style="width: 20; height: 20px;">
+                           </span>
+                           <select class="custom-select" id="CourseSelect">
+                                <option selected disabled>Select Course</option>
+                                <option value="Math">Math</option>
+                                <option value="HairCut">HairCut</option>
+                                <option value="Sport">Sport</option>
+                                <option value="Software Engineer">Software Engineer</option>
+                              </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-6">
+                    <label for="inpuGender">Gender</label>
+                    <div class="input-group-prepend">
+                    <button type="button"  value="1" class="btn btn-outline-success">Female</button>
+                    <button type="button"  value="2" class="btn btn-outline-success">Male</button>
+                    <button type="button"  value="3" class="btn btn-outline-success">Other</button>
+
+
+                  </div>
+                </div>
+                </div>
+                <div>
+                        <button type="button" id = "BtnClick" class="btn btn-success btn-block" onclick="getData()">Save</button>
+                </div>
+            
+              </form>
+              
+              <script>
+                        function getData(){
+                            
+                            var userName=document.querySelector('#inputText').value;
+                            var Email=document.querySelector('#inputEmail').value;
+                            var AddressValue=document.querySelector('#inputAddress').value;
+                            var Courseelect=document.querySelector('#CourseSelect').value;
+                            var gender=document.querySelector('.btn').value;
+                            var gender = ["Female", "Male", "Other"];
+                        
+                            switch(gender){
+                                case '0':
+                                    console.log(gender[0]);
+                                    break;
+                                case '1':
+                                console.log(gender[1]);
+                                    break;
+                                 case '2':
+                                 console.log("Other")
+                                    break;
+                            }
+                            console.log(userName);
+                            console.log(Email);
+                            console.log(AddressValue);
+                            console.log(Courseelect);
+                     
+                        
+                        
+                        
+                        }
+                        
+                        </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
