@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Table Style Ex</title>
+    <style>
+        th:first-child{
+            width: 100px;
+        }
+        td:nth-child(2){
+            width: 200px;
+        }
+
+        tr:nth-child(even){
+            background-color:gainsboro;
+        }
+
+        td:nth-last-child(-n+3){
+            text-align: center;
+        }
+
+        tr:nth-last-child(-n+2){
+            font-style: italic;    
+        }
+
+        thead tr {
+            background-color:lightskyblue;
+        }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Weather</th>
+          <th>Max. Day (&deg;C)</th>
+          <th>Min. Night (&deg;C)</th>
+          <th>Wind (mph)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Sun</th>
+          <td>Sunny</td>
+          <td>18</td>
+          <td>14</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <th>Mon</th>
+          <td>Grey Cloud</td>
+          <td>12</td>
+          <td>8</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <th>Tue</th>
+          <td>Grey Cloud</td>
+          <td>14</td>
+          <td>10</td>
+          <td>12</td>
+        </tr>
+        <tr>
+          <th>Wed</th>
+          <td>Heavy Rain</td>
+          <td>8</td>
+          <td>4</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <th>Thu</th>
+          <td>Sunny</td>
+          <td>17</td>
+          <td>13</td>
+          <td>8</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

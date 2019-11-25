@@ -1,0 +1,47 @@
+body {
+    background-color: aliceblue;
+}
+p {
+    color: red;
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 4em;
+    text-decoration: underline;
+    text-align: center;
+    color: mediumspringgreen;
+}
+
+/* id selector */
+#first-p {
+    color: blue;
+}
+
+/* class */
+.bluish {
+    color: lightskyblue;
+}
+
+p.bluish {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p[myname="shahar"]{
+    border: 1px solid red;
+}
+
+/* starts with */
+a[href^="http"]{
+
+}
+
+/* ends with */
+a[href$="pdf"]{
+
+}
+
+/* contains */
+a[href*="shahar"]{
+
+}
